@@ -1,5 +1,8 @@
 package com.tegareng.perpustakaan.dao;
 
-public interface BookIDao {
+import com.tegareng.perpustakaan.entity.BookEntity;
 
+public interface BookIDao extends BaseIDAO<BookEntity>{
+	
+	
 }

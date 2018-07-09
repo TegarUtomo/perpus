@@ -1,5 +1,11 @@
 package com.tegareng.perpustakaan.service;
 
-public interface BookIService {
+import java.util.List;
 
+import com.tegareng.perpustakaan.model.BookModel;
+
+public interface BookIService {
+	
+	public List<BookModel> getList();
+	
 }
