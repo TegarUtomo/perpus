@@ -16,6 +16,7 @@ ALTER TABLE `book`
 COMMIT;
 
 ### Petunjuk menjalankan aplikasi
+* setting database in /resources/prop/database.properties
 * clean and build project
 * deploy
 * path = /book/all, /book?id={id}
