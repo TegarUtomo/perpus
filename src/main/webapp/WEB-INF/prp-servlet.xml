@@ -21,9 +21,12 @@
 
 	<bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource">
 		<property name="driverClassName" value="${driverClassName}" />
+		<property name="url" value="${urlfull}" />
+		<!-- why ? I don't know
 		<property name="url" value="${url}" />
 		<property name="username" value="${username}" />
 		<property name="password" value="${password}" />
+		-->
 	</bean>
 
 	<bean id="sessionFactory"
@@ -32,7 +35,7 @@
 		<property name="packagesToScan" value="com.tegareng.perpustakaan.entity" />
 		<property name="hibernateProperties">
 			<props>
-				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+				<prop key="hibernate.dialect">${hibernate.dialect}</prop>
 			</props>
 		</property>
 	</bean>

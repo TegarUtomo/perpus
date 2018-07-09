@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.tegareng.perpustakaan.dao.BookIDao;
 import com.tegareng.perpustakaan.entity.BookEntity;
@@ -12,6 +13,7 @@ import com.tegareng.perpustakaan.model.BookModel;
 import com.tegareng.perpustakaan.service.BookIService;
 
 @Service
+@Transactional
 public class BookServiceImpl implements BookIService {
 
 	
@@ -40,8 +42,8 @@ public class BookServiceImpl implements BookIService {
 		
 		BookModel model = new BookModel();
 		model.setId(entity.getId());
-		model.setName(entity.getName());
-		model.setDesc(entity.getDesc());
+		model.setName(entity.getNama());
+		model.setDesc(entity.getDeskripsi());
 		
 		return model;
 		

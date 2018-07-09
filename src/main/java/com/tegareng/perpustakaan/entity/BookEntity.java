@@ -2,16 +2,18 @@ package com.tegareng.perpustakaan.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.validation.constraints.Max;
 
 @Entity
+@Table(name="book")
 public class BookEntity {
 	
 	@Id
 	@Max(value=32)
 	private String id;
-	private String name;
-	private String desc;
+	private String nama;
+	private String deskripsi;
 	
 	public String getId() {
 		return id;
@@ -19,17 +21,16 @@ public class BookEntity {
 	public void setId(String id) {
 		this.id = id;
 	}
-	public String getName() {
-		return name;
+	public String getNama() {
+		return nama;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setNama(String nama) {
+		this.nama = nama;
 	}
-	public String getDesc() {
-		return desc;
+	public String getDeskripsi() {
+		return deskripsi;
 	}
-	public void setDesc(String desc) {
-		this.desc = desc;
+	public void setDeskripsi(String deskripsi) {
+		this.deskripsi = deskripsi;
 	}
-	
 }
