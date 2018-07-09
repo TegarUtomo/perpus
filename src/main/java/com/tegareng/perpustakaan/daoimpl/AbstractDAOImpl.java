@@ -3,18 +3,25 @@ package com.tegareng.perpustakaan.daoimpl;
 import java.util.List;
 
 import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import com.tegareng.perpustakaan.dao.BaseIDAO;
 
-public abstract class AbstractDAOImpl<T> implements BaseIDAO<T> {
+public class AbstractDAOImpl<T> implements BaseIDAO<T> {
 	
 	private Class<T> entityClass;
+	
+	@Autowired
+	private SessionFactory sessionFactory;
 	
 	public AbstractDAOImpl(Class<T> entityClass){
 		this.entityClass = entityClass;
 	}
 	
-	protected abstract Session getCurrentSession();
+	private Session getCurrentSession(){
+		return sessionFactory.getCurrentSession();
+	}
 	
 	@Override
 	public void save(T entity) {
