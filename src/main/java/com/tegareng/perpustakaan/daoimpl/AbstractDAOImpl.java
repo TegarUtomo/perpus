@@ -19,7 +19,7 @@ public class AbstractDAOImpl<T> implements BaseIDAO<T> {
 		this.entityClass = entityClass;
 	}
 	
-	private Session getCurrentSession(){
+	protected Session getCurrentSession(){
 		return sessionFactory.getCurrentSession();
 	}
 	
