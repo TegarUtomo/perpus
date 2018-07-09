@@ -8,4 +8,5 @@ public interface BookIService {
 	
 	public List<BookModel> getList();
 	
+	public BookModel getOne(String id);
 }
