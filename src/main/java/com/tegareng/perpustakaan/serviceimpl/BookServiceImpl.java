@@ -35,7 +35,6 @@ public class BookServiceImpl implements BookIService {
 				modelList.add(m);
 			}
 		}
-
 		return modelList;
 	}
 
@@ -93,5 +92,11 @@ public class BookServiceImpl implements BookIService {
 		entity.setDeskripsi(model.getDesc());
 		
 		return entity;
+	}
+
+	@Override
+	public Response update(BookModel input) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }
