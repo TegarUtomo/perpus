@@ -13,5 +13,5 @@ public interface BookIService {
 	
 	public Response save(BookModel input);
 	
-	public Response update(BookModel input);
+	public Response update(String id, BookModel input);
 }

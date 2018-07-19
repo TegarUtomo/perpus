@@ -95,8 +95,37 @@ public class BookServiceImpl implements BookIService {
 	}
 
 	@Override
-	public Response update(BookModel input) {
-		// TODO Auto-generated method stub
-		return null;
+	public Response update(String id, BookModel input) {
+		
+		Response result = new Response();
+		if(id == null || id.trim().isEmpty()){
+			result.setCode("500");
+			result.setMessage("invalid id");
+			return result;
+		}
+		
+		BookEntity entity = bookDao.findOne(id);
+		
+		if(entity == null){
+			result.setCode("500");
+			result.setMessage("invalid data");
+			return result;
+		}
+		
+		if(input == null){
+			result.setCode("200");
+			result.setMessage("No Data Changes!");
+			return result;
+		}
+		
+		entity.setNama(input.getName());
+		entity.setDeskripsi(input.getDesc());
+		
+		bookDao.edit(entity);
+		
+		result.setCode("200");
+		result.setMessage("Success, Data Changes!");
+		
+		return result;
 	}
 }
